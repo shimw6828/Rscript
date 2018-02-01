@@ -1,0 +1,27 @@
+filename <- list.files(path = "/home/shimw/yushixiong/one to one/",pattern = ".csv",full.names = FALSE)
+filenamet <- list.files(path = "/home/shimw/yushixiong/one to one/",pattern = ".csv",full.names = TRUE)
+for (i in 1:4){
+  assign(as.character(filename[[i]]),read.csv(filenamet[i],header = TRUE))
+}
+cav_one_number <- length(norgarcav_one_true.csv$Gene.ID)
+cod_one_number <- length(norgarcod_one_true.csv$Gene.ID)
+med_one_number <- length(norgarmed_one_true.csv$Gene.ID)
+zeb_one_number <- length(norgarzeb_one_true.csv$Gene.ID)
+cav_pie <- c(cav_one_number,cav_number_1,cav_number_2,cav_number_3)
+cav_labels <- round(100*cav_pie/sum(cav_pie),1)
+cav_labels <- paste(cav_labels,"%", sep="")
+cod_pie <- c(cod_one_number,cod_number_1,cod_number_2,cod_number_3)
+cod_labels <- round(cod_pie/sum(cod_pie)*100,1)
+cod_labels <- paste(cod_labels,"%", sep="")
+med_pie <- c(med_one_number,med_number_1,med_number_2,med_number_3)
+med_labels <- round(med_pie/sum(med_pie)*100,1)
+med_labels <- paste(med_labels,"%", sep="")
+zeb_pie <- c(zeb_one_number,zeb_number_1,zeb_number_2,zeb_number_3)
+zeb_labels <- round(zeb_pie/sum(zeb_pie)*100,1)
+zeb_labels <- paste(zeb_labels,"%", sep="")
+p_cav_pie <- pie(cav_pie, labels=cav_labels,col=c("#00CED1","yellow","green3","cornsilk")) + legend("topright", c("non-functionalization","subfunctionalization","neofunctionalization","dosage selection"), cex=0.8, fill=c("#00CED1","yellow","green3","cornsilk"))
+
+p_cod_pie <- pie(cod_pie, labels=cod_labels,col=c("#00CED1","yellow","green3","cornsilk")) + legend("topright", c("non-functionalization","subfunctionalization","neofunctionalization","dosage selection"), cex=0.8, fill=c("#00CED1","yellow","green3","cornsilk"))
+p_med_pie <- pie(med_pie, labels=med_labels,col=c("#00CED1","yellow","green3","cornsilk")) + legend("topright", c("non-functionalization","subfunctionalization","neofunctionalization","dosage selection"), cex=0.8, fill=c("#00CED1","yellow","green3","cornsilk"))
+p_zeb_pie <- pie(zeb_pie, labels=zeb_labels,col=c("#00CED1","yellow","green3","cornsilk")) + legend("topright", c("non-functionalization","subfunctionalization","neofunctionalization","dosage selection"), cex=0.8, fill=c("#00CED1","yellow","green3","cornsilk"))
+
